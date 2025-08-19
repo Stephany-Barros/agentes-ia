@@ -331,19 +331,18 @@
             
             <h3>Exemplo de Prompt (System Message) para o Agente de Leads no Flowise:</h3>
             <pre class="prompt-code"><code>
-Você é um qualificador de leads especialista da [Nome da Empresa], educado, objetivo e focado em identificar oportunidades de negócio.
+Você é uma qualificadora de leads especialista da Empresa X, educada, objetiva e focada em identificar oportunidades de negócio.
 Sua tarefa é analisar os dados de CNPJ fornecidos e determinar se a empresa é um lead "quente" ou "frio" com base nos critérios abaixo.
 
 [INSTRUÇÕES DA PERSONA]
-- Seja direto e profissional.
+- Seja direta e profissional.
 - Use linguagem formal e clara.
 - Se não conseguir qualificar, informe isso claramente e por que.
 
 [CRITÉRIOS DE QUALIFICAÇÃO DE LEAD "QUENTE"]
 - Faturamento anual acima de R$X milhões.
-- Setor de atuação: [Setores específicos, ex: Tecnologia, Manufatura, Varejo Online].
-- Número de funcionários: acima de Y.
-- Presença digital: Site ativo e perfil em redes sociais (LinkedIn).
+- Setor de atuação: [Setores específicos, ex: Logística, Automobilismo, Transportes].
+- Número de veículos na frota: acima de Y.
 
 [FERRAMENTA DISPONÍVEL]
 - Nome: 'consultar_cnpj_database'
@@ -383,7 +382,7 @@ Modelo:
                     <h4>Destaques da construção na Intercom:</h4>
                     <ul>
                         <li>Integrações Poderosas: Conexões com o sistema interno e o CRM permitem que o usuário acesse informações como histórico de reservas, cadastro e até mesmo realize alterações e cancelamentos de reservas diretamente pelo chat.</li>
-                        <li>Chamadas de APIs Rest Post: Componentes configurados com endpoints de consulta e de alterações. Nesses componentes, foram configurados os retornos que deveriam ser apresentados ao usuário, convertendo códigos em texto.</li>
+                        <li>Chamadas de APIs Rest: Componentes configurados com endpoints de consulta e de alterações. Nesses componentes, foram configurados os retornos que deveriam ser apresentados ao usuário, convertendo códigos em texto.</li>
                         <li>LLM Fin (Nativo da Intercom): O modelo de linguagem nativo da ferramenta.</li>
                         <li>Componentes Condicionais: Para direcionar fluxos diferentes dependendo do retorno das APIs.</li>
                         <li>Configuração de Prompts Avançada: Diversos campos para prompts com limite de 100 prompts de diferentes técnicas que têm como objetivo definir a persona e a comunicação do agente, solicitar contexto ao usuário quando a entrada não é suficientemente explicativa, e prompts para direcionamento e ações como, por exemplo, direcionar o usuário ao atendimento humano quando identificadas palavras de alerta como "processo judicial", "reclamação", "falar com humano", entre outras.</li>
@@ -408,20 +407,20 @@ Modelo:
 
             <h3>Estrutura Visual dos Prompts na Intercom</h3>
             
-            <img src="imagens/prompt_Intercom.png resentação visual da estrutura de prompt na Intercom" class="prompt-image">
+            <img src="imagens/prompt_Intercom.png">
 
             <h3>Exemplos de Prompts e Tools para o Agente de Suporte na Intercom:</h3>
             
             <h4>1. Prompt de Comunicação (Campo "Guidance" / "Persona"):</h4>
             <pre class="prompt-code"><code>
-Você é o assistente virtual da [Nome da Empresa], um chatbot amigável e prestativo.
+Você é a Ana, a assistente virtual da Empresa Z, um chatbot amigável e proativa.
 Seu principal objetivo é resolver as dúvidas dos clientes de forma autônoma, fornecendo informações precisas e direcionando para as ações de autosserviço apropriadas.
-Mantenha um tom de voz empático e objetivo.
+Utilize tom de voz empático e objetivo. Utilize palavras que se alinham ao brand da marca como ágil, fácil e prático.
 </code></pre>
 
             <h4>2. Prompt de Roteamento/Guarda-chuva (Campo "Guidance" / "Roteamento"):</h4>
             <pre class="prompt-code"><code>
-Se o usuário expressar frustração, pedir para falar com um atendente, ou usar termos como "reclamação", "processo judicial", "procon", "defeito grave", transfira imediatamente para um agente humano da fila de Suporte Prioritário.
+Se o usuário expressar frustração, pedir para falar com um atendente, ou usar termos como "reclamação", "processo judicial", "procon", "reclamação", transfira imediatamente para um agente humano da fila de Suporte Prioritário.
 Quando a entrada for ambígua ou muito curta, peça mais detalhes ao usuário antes de tentar uma resposta ou ação.
 </code></pre>
 
@@ -483,3 +482,4 @@ Instrução para o Agente:
 </body>
 
 </html>
+
